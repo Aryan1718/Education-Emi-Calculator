@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen flex justify-center items-center">
+        <div class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full">
+            <h1 class="text-3xl font-semibold text-gray-800 text-center mb-6">EMI Calculator</h1>
+            <form id="emiForm" class="space-y-4">
+                <div>
+                    <label for="loanAmount" class="block text-sm font-medium text-gray-700">Loan Amount ($)</label>
+                    <input type="number" id="loanAmount" name="loanAmount" class="input-field" required>
+                </div>
+                <div>
+                    <label for="interestRate" class="block text-sm font-medium text-gray-700">Interest Rate (%)</label>
+                    <input type="number" id="interestRate" name="interestRate" class="input-field" required>
+                </div>
+                <div>
+                    <label for="loanTerm" class="block text-sm font-medium text-gray-700">Loan Term (year)</label>
+                    <input type="number" id="loanTerm" name="loanTerm" class="input-field" required>
+                </div>
+                <div>
+                    <label for="courseduration" class="block text-sm font-medium text-gray-700">Course Duration</label>
+                    <input type="number" id="courseTime" name="courseTime" class="input-field" required>
+                </div>
+                <div>
+                    <label for="moratoriumPeriod" class="block text-sm font-medium text-gray-700">Moratorium Period</label>
+                    <select id="moratoriumPeriod" name="moratoriumPeriod" class="input-field" required>
+                        <option value="Complete Moratorium">Complete Moratorium</option>
+                        <option value="Principal Moratorium">Principal Moratorium</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300">Calculate EMI</button>
+            </form>
+            <div id="emiResultIn" class="mt-6 text-center hidden">
+                <h2 class="text-lg font-semibold mb-2">Interest during the moratorium:</h2>
+                <p id="emiAmountIn" class="text-2xl font-bold"></p>
+            </div>
+            <div id="emiResult" class="mt-6 text-center hidden">
+                <h2 class="text-lg font-semibold mb-2">Your EMI + Interest after moratorium:</h2>
+                <p id="emiAmount" class="text-2xl font-bold"></p>
+            </div>
+
+        </div>
+    </div>
+    <div class="information">
+        <h2><b>Note**</b></h2>
+        <h4><b>Loan tenure:</b> It is inclusive of course duration and additional period of 6 months.</h4>
+        <h4><b>Moratorium Period:</b> The time during which a customer is not required to make any loan repayment. It comprises of course duration with an additional period of 6 months. A customer depending on the merit of the case may be given an option to avail of moratorium period.</h4>
+        <h4><b>Complete Moratorium:</b> Where customer has an option to not pay EMI till the moratorium period. Interest is accrued and EMI starts after completion of moratorium Period.</h4>
+        <h4><b>Principal Moratorium:</b> Where customer has an option to pay only Interest accrued during the moratorium period and full EMI starts after completion of moratorium Period.</h4>
+    </div>
+    <script src="../../EmiCalculator/main.js"></script>
+</body>
+</html>
