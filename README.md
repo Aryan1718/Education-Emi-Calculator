@@ -1,1 +1,1 @@
-# Education-Emi-Calculator
+# EducationLoan-Emi-Calculator
